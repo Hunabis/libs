@@ -1,0 +1,13 @@
+{
+    "shared": {
+        "name": "item_generation_lib",
+		"include": [
+			"shared_headers"
+		]
+    },
+
+    "depends": [
+    	"innercore",
+    	"nativejs"
+	]
+}
