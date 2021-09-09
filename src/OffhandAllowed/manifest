@@ -1,0 +1,13 @@
+{
+    "shared": {
+        "name": "offhand_allowed",
+		"include": [
+			"shared_headers"
+		]
+    },
+
+    "depends": [
+    	"innercore",
+    	"nativejs"
+	]
+}
