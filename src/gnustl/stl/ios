@@ -212,7 +212,6 @@ storage-class-specifier const error_category& iostream_category() noexcept;
 
 #include "__config"
 #include "iosfwd"
-#include "__locale"
 #include "system_error"
 
 #if !defined(_LIBCPP_HAS_NO_ATOMIC_HEADER)
