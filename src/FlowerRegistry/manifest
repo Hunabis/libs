@@ -1,0 +1,10 @@
+{
+    "shared": {
+        "name": "flower_registry_lib"
+    },
+
+    "depends": [
+    	"innercore",
+    	"nativejs"
+	]
+}
