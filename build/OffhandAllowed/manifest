@@ -1,0 +1,10 @@
+{
+    "shared": {
+        "name": "offhandallowed",
+		"include": []
+    },
+    "depends": [
+    	"innercore",
+    	"nativejs"
+	]
+}

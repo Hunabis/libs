@@ -1,0 +1,11 @@
+{
+    "shared": {
+        "name": "itemgeneration",
+		"include": []
+    },
+    "depends": [
+    	"innercore",
+    	"nativejs",
+		"gnustl_shared"
+	]
+}
