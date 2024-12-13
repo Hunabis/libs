@@ -114,7 +114,7 @@ public:
 			std::vector<std::vector<int>> generationDatas = itemGenerators[tableName];
 			for(std::vector<int> generationData : generationDatas){
 				if(generationData[2] > random->nextInt(0, 100)){
-					ItemStack* itemStack = ItemStack::getById(generationData[0], random->nextInt(generationData[3], generationData[4]), generationData[1], 0);	
+					ItemStack* itemStack = ItemStack::getById(generationData[0], random->nextInt(generationData[3], generationData[4]), generationData[1], generationData[5]);	
 					VTABLE_FIND_OFFSET(setItemOffset, _ZTV16FillingContainer, _ZN16FillingContainer7setItemEiRK9ItemStack)
 					VTABLE_CALL<void>(setItemOffset, container, random->nextInt(0, 26), itemStack);
 					delete itemStack;
@@ -137,6 +137,7 @@ JS_EXPORT_COMPLEX(ItemGenerationModule, addItemGenerator, "V(SS)", (JNIEnv* env,
 	std::vector<int> generatorData;
 	int id = obj.get("id").asInt();
 	int data = obj.get("data").asInt();
+	long extra = obj.get("extra").asLong();
 	int chance = obj.get("chance").asInt();
 	int minCount = obj.get("minCount").asInt();
 	int maxCount = obj.get("maxCount").asInt();
@@ -149,6 +150,7 @@ JS_EXPORT_COMPLEX(ItemGenerationModule, addItemGenerator, "V(SS)", (JNIEnv* env,
 	generatorData.push_back(chance > 0 ? chance : 1);
 	generatorData.push_back(minCount > 0 ? minCount : 1);
 	generatorData.push_back(maxCount > 0 ? maxCount : 1);
+	generatorData.push_back(extra);
 	std::vector<std::vector<int>> vec = itemGenerators[tableName];
 	for(std::vector<int> checkVec : vec){
 		if(generatorData == checkVec){
