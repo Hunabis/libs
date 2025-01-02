@@ -137,7 +137,7 @@ JS_EXPORT_COMPLEX(ItemGenerationModule, addItemGenerator, "V(SS)", (JNIEnv* env,
 	std::vector<int> generatorData;
 	int id = obj.get("id").asInt();
 	int data = obj.get("data").asInt();
-	long extra = obj.get("extra").asLong();
+	long extra = obj.get("extra").asPointer();
 	int chance = obj.get("chance").asInt();
 	int minCount = obj.get("minCount").asInt();
 	int maxCount = obj.get("maxCount").asInt();
